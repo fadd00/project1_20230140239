@@ -1,7 +1,7 @@
 # tugas praktikum
 
-nama : Andhika Prima Hutama
-nim  : 20230140239
+nama : Andhika Prima Hutama <br>
+nim  : 20230140239 <br>
 mk   : Pemrograman web framework
 ---
 ## tampilan
