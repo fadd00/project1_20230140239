@@ -4,11 +4,14 @@
 
 ### Andhika Prima Hutama - 20230140239
 
-### migration
+### user
+
 ![alt text](image3/image.png)
 
-### database
+### product
+
 ![alt text](image3/image-1.png)
 
-### model
+### kategori
+
 ![alt text](image3/image-2.png)
