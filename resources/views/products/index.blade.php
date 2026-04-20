@@ -44,13 +44,10 @@
                                     <td class="px-6 py-4 whitespace-nowrap">{{ $product->qty }}</td>
                                     <td class="px-6 py-4 whitespace-nowrap">Rp {{ number_format($product->price, 2, ',', '.') }}</td>
                                     <td class="px-6 py-4 whitespace-nowrap">{{ $product->user ? $product->user->name : 'N/A' }}</td>
-                                    <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                        <a href="{{ route('products.edit', $product->id) }}" class="text-indigo-600 dark:text-indigo-400 hover:text-indigo-900 mr-3">Edit</a>
-                                        <form action="{{ route('products.destroy', $product->id) }}" method="POST" class="inline-block" onsubmit="return confirm('Are you sure you want to delete this product?');">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit" class="text-red-600 dark:text-red-400 hover:text-red-900">Delete</button>
-                                        </form>
+                                    <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium space-x-2">
+                                        <x-info-button href="{{ route('products.show', $product->id) }}"></x-info-button>
+                                        <x-edit-button href="{{ route('products.edit', $product->id) }}"></x-edit-button>
+                                        <x-delete-button action="{{ route('products.destroy', $product->id) }}"></x-delete-button>
                                     </td>
                                 </tr>
                                 @empty
