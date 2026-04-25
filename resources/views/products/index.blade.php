@@ -32,6 +32,7 @@
                                     <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Name</th>
                                     <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Quantity</th>
                                     <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Price</th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Category</th>
                                     <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Owner</th>
                                     <th scope="col" class="px-6 py-3 text-right text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Action</th>
                                 </tr>
@@ -43,6 +44,7 @@
                                     <td class="px-6 py-4 whitespace-nowrap">{{ $product->name }}</td>
                                     <td class="px-6 py-4 whitespace-nowrap">{{ $product->qty }}</td>
                                     <td class="px-6 py-4 whitespace-nowrap">Rp {{ number_format($product->price, 2, ',', '.') }}</td>
+                                    <td class="px-6 py-4 whitespace-nowrap">{{ $product->category?->name ?? 'N/A' }}</td>
                                     <td class="px-6 py-4 whitespace-nowrap">{{ $product->user ? $product->user->name : 'N/A' }}</td>
                                     <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium space-x-2">
                                         <x-info-button href="{{ route('products.show', $product->id) }}"></x-info-button>
@@ -52,7 +54,7 @@
                                 </tr>
                                 @empty
                                 <tr>
-                                    <td colspan="6" class="px-6 py-4 whitespace-nowrap text-center text-gray-500 dark:text-gray-400">
+                                    <td colspan="7" class="px-6 py-4 whitespace-nowrap text-center text-gray-500 dark:text-gray-400">
                                         No products found.
                                     </td>
                                 </tr>

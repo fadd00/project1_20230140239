@@ -42,15 +42,15 @@
                         </div>
 
                         <div class="mb-4">
-                            <label for="user_id" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Owner</label>
-                            <select name="user_id" id="user_id" 
+                            <label for="category_id" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Category</label>
+                            <select name="category_id" id="category_id"
                                 class="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 focus:ring-indigo-500 shadow-sm">
-                                <option value="">-- Select Owner --</option>
-                                @foreach($users as $user)
-                                    <option value="{{ $user->id }}" {{ old('user_id', $product->user_id) == $user->id ? 'selected' : '' }}>{{ $user->name }} ({{ $user->email }})</option>
+                                <option value="">-- Select Category --</option>
+                                @foreach($categories as $category)
+                                    <option value="{{ $category->id }}" {{ old('category_id', $product->category_id) == $category->id ? 'selected' : '' }}>{{ $category->name }}</option>
                                 @endforeach
                             </select>
-                            @error('user_id')
+                            @error('category_id')
                                 <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
                             @enderror
                         </div>

@@ -97,6 +97,12 @@
                     </span>
                 </div>
 
+                {{-- Category --}}
+                <div class="grid px-6 py-4" style="grid-template-columns:160px 1fr;align-items:center;border-bottom:0.5px solid rgba(255,255,255,0.06);">
+                    <span class="text-sm" style="color:#5a6478;">Category</span>
+                    <span class="text-sm" style="color:#dde1ec;">{{ $product->category?->name ?? 'N/A' }}</span>
+                </div>
+
                 {{-- Owner --}}
                 <div class="grid px-6 py-4" style="grid-template-columns:160px 1fr;align-items:center;border-bottom:0.5px solid rgba(255,255,255,0.06);">
                     <span class="text-sm" style="color:#5a6478;">Owner</span>
